@@ -1,16 +1,3 @@
 # custom-panel-test
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
-
-Describe custom-panel-test here.
-
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
-
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+Blatently take from https://github.com/ProjectMirador/mirador/commit/d07d14d1f19b4af3a61b82820ccc6715ee209620#diff-5f2d8244c08e22afcdeb6fa72fa082e6

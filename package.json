@@ -21,9 +21,12 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x"
+    "mirador": "^3.0.0-beta.9",
+    "react": "16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "mirador": "^3.0.0-beta.9",
     "nwb": "0.24.x",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

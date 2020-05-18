@@ -1,15 +1,23 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import Mirador from 'mirador';
+import {
+  CustomPanel,
+  CustomButton
+} from '../../src';
 
-import Example from '../../src'
+const config = {
+  id: 'demo',
+  window: {
+    defaultView: 'single',
+    sideBarOpenByDefault: true,
+  },
+  windows: [
+    {
+      loadedManifest: 'https://purl.stanford.edu/sn904cj3429/iiif/manifest'
+    }
+  ]
+};
 
-export default class Demo extends Component {
-  render() {
-    return <div>
-      <h1>custom-panel-test Demo</h1>
-      <Example/>
-    </div>
-  }
-}
-
-render(<Demo/>, document.querySelector('#demo'))
+Mirador.viewer(config, [
+  CustomPanel,
+  CustomButton
+]);

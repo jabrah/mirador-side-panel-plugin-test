@@ -1,9 +1,2 @@
-import React, {Component} from 'react'
-
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+export CustomPanel from './custom-side-panel/plugin';
+export CustomButton from './custom-side-button/plugin';
