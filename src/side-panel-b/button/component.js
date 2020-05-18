@@ -7,7 +7,7 @@ export default class CustomSideButton extends Component {
      * 
      */
     return (
-      <TabButton id="add-plugin-companion-window-button" {...otherProps} label="😀" value="CustomMooKey" />
+      <TabButton id="add-plugin-companion-window-button" {...otherProps} label="🍕" value="CustomKey2" />
     );
   }
 }

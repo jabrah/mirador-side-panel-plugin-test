@@ -4,5 +4,5 @@ export default {
   target: 'CustomPanel',
   mode: 'add',
   component: CustomSidePanel,
-  companionWindowKey: 'CustomMooKey'
+  companionWindowKey: 'CustomKey2'
 };

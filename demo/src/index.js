@@ -1,7 +1,9 @@
 import Mirador from 'mirador';
 import {
-  CustomPanel,
-  CustomButton
+  CustomPanelA,
+  CustomButtonA,
+  CustomPanelB,
+  CustomButtonB
 } from '../../src';
 
 const config = {
@@ -18,6 +20,8 @@ const config = {
 };
 
 Mirador.viewer(config, [
-  CustomPanel,
-  CustomButton
+  CustomPanelA,
+  CustomButtonA,
+  CustomPanelB,
+  CustomButtonB
 ]);
