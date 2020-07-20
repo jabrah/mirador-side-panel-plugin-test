@@ -1,6 +1,6 @@
-# custom-panel-test
+# Custom Companion Window Plugins Test
 
-Blatently take from this CompanionWindow test: https://github.com/ProjectMirador/mirador/commit/d07d14d1f19b4af3a61b82820ccc6715ee209620#diff-5f2d8244c08e22afcdeb6fa72fa082e6 
+Blatently take from the CompanionWindow test from Mirador (https://github.com/ProjectMirador/mirador/blob/master/__tests__/integration/mirador/plugins/companionWindow.html)
 
 This demonstrates in a trivial way the ability to register more than one custom side panels. Please note that this is functional, but it produces Material UI errors in the JS console.
 
@@ -23,4 +23,4 @@ There are a couple of key takeaways that I found while putting this sample toget
 
 * Any custom side panel will need a second plugin to define a custom `WindowSideBarButtons` button, or else there will be no UI element to toggle your new panel. 
 * The custom panel MUST define a unique `companionWindowKey`. The new button to open your custom panel must then set its TabButton value to this key.
-
+* Assuming you want to use this panel in a window sidebar, you should wrap your UI in a Mirador CompanionWindow to get its features and theme. See `side-panel-a` as a simple example
