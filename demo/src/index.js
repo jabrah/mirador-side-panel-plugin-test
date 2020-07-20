@@ -1,10 +1,5 @@
 import Mirador from 'mirador';
-import {
-  CustomPanelA,
-  CustomButtonA,
-  CustomPanelB,
-  CustomButtonB
-} from '../../src';
+import CustomPanelPlugins from '../../src';
 
 const config = {
   id: 'demo',
@@ -19,9 +14,4 @@ const config = {
   ]
 };
 
-Mirador.viewer(config, [
-  CustomPanelA,
-  CustomButtonA,
-  CustomPanelB,
-  CustomButtonB
-]);
+Mirador.viewer(config, CustomPanelPlugins);
