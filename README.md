@@ -24,3 +24,8 @@ There are a couple of key takeaways that I found while putting this sample toget
 * Any custom side panel will need a second plugin to define a custom `WindowSideBarButtons` button, or else there will be no UI element to toggle your new panel. 
 * The custom panel MUST define a unique `companionWindowKey`. The new button to open your custom panel must then set its TabButton value to this key.
 * Assuming you want to use this panel in a window sidebar, you should wrap your UI in a Mirador CompanionWindow to get its features and theme. See `side-panel-a` as a simple example
+
+
+## Unresolved Issues
+
+* How do we specify the tooltip for our custom button? As far as I can tell, our custom button will get wrapped in a component defined within Mirador which will look for a i18n key to put as the tooltip, keyed off of our button's "value." (https://github.com/ProjectMirador/mirador/blob/master/src/components/WindowSideBarButtons.js#L54-L66)
