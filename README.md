@@ -26,6 +26,52 @@ There are a couple of key takeaways that I found while putting this sample toget
 * Assuming you want to use this panel in a window sidebar, you should wrap your UI in a Mirador CompanionWindow to get its features and theme. See `side-panel-a` as a simple example
 
 
-## Unresolved Issues
+### Setting your button's tooltip
 
-* How do we specify the tooltip for our custom button? As far as I can tell, our custom button will get wrapped in a component defined within Mirador which will look for a i18n key to put as the tooltip, keyed off of our button's "value." (https://github.com/ProjectMirador/mirador/blob/master/src/components/WindowSideBarButtons.js#L54-L66)
+In order to get the tooltip to work for the custom window sidebar button, you need to inject a custom translation key in Mirador through your instance's configuration. 
+
+* Your button plugin will define a `value`. In this repo's `side-panel-a` button, you can see: `CustomButton.value = 'CustomKey1';`
+* That value is used in the translation key: `openCompanionWindow_<value>`, so in our case, the translation key becomes: `openCompanionWindow_CustomKey1`
+* This translation key/value must be added to your Mirador intance's configuration
+
+_MyButtonPlugin.js_
+``` javascript
+import React from 'react';
+
+const CustomButton = () => (
+  <span id="custom-side-panel-a-button">😀</span>
+);
+CustomButton.value = 'CustomKey1';
+
+export default {
+  target: 'WindowSideBarButtons',
+  mode: 'add',
+  component: CustomButton
+};
+```
+
+_index.js_
+``` javascript
+import Mirador from 'mirador';
+import MyButtonPlugin from '<wherever_this_lives>';
+
+const config = {
+  id: 'demo',
+  window: {
+    defaultView: 'single',
+    sideBarOpenByDefault: true,
+  },
+  windows: [
+    {
+      loadedManifest: '<your_manifest_here>'
+    }
+  ],
+  translations: {
+    en: {
+      openCompanionWindow_CustomKey1: 'This is a moo'
+    }
+  }
+};
+
+Mirador.viewer(config, [ MyButtonPlugin ]);
+```
